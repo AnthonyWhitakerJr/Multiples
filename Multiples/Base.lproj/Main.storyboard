@@ -54,6 +54,9 @@
                                     <constraint firstAttribute="width" constant="215" id="xgD-FI-iqd"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="onPlayPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKj-UF-Zp5"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpN-yB-GeY" userLabel="OutputLabel">
                                 <rect key="frame" x="126" y="133" width="349" height="54"/>
@@ -68,6 +71,9 @@
                                     <constraint firstAttribute="height" constant="101" id="nq7-JZ-0YR"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7R2-9j-6Su"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -88,6 +94,13 @@
                             <constraint firstAttribute="trailing" secondItem="t4u-m4-90b" secondAttribute="trailing" id="zz3-vJ-pcV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="GtX-zc-8xY" id="qg1-sw-nOv"/>
+                        <outlet property="logo" destination="2je-nz-Ryb" id="3z9-Uu-rcn"/>
+                        <outlet property="numberEntryText" destination="Jc9-Dl-1ql" id="JD8-Wk-DpX"/>
+                        <outlet property="outputLabel" destination="cpN-yB-GeY" id="b2A-wd-1tA"/>
+                        <outlet property="playButton" destination="A6y-Vt-W6y" id="Yu9-qX-XKp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

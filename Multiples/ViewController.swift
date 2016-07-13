@@ -10,16 +10,64 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var numberEntryText: UITextField!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    
+    var addend: Int = 0
+    var previousMultiple: Int = 0
+    let defaultOuputText = "Press Add to add!"
+    let maxMultipleCount = 10
+    var multipleCount = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tapper = UITapGestureRecognizer(target: view, action:#selector(UIView.endEditing))
+        tapper.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapper)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func toggleView(showMainScreen: Bool){
+        logo.hidden = !showMainScreen
+        numberEntryText.hidden = !showMainScreen
+        playButton.hidden = !showMainScreen
+        
+        outputLabel.hidden = showMainScreen
+        addButton.hidden = showMainScreen
     }
-
+    
+    @IBAction func onPlayPressed(sender: UIButton) {
+        if(numberValidation()){
+            addend = Int(numberEntryText.text!)!
+            toggleView(false)
+        }
+    }
+    
+    func numberValidation() -> Bool{
+        return numberEntryText != nil && numberEntryText.text != "" && Int(numberEntryText.text!) != nil
+    }
+    
+    @IBAction func onAddPressed(sender: UIButton) {
+        if(multipleCount > maxMultipleCount){
+            restart()
+        }
+        
+        outputLabel.text = "\(previousMultiple) + \(addend) = \(previousMultiple + addend)"
+        previousMultiple += addend
+        multipleCount+=1
+    }
+    
+    func restart(){
+        toggleView(true)
+        addend = 0
+        previousMultiple = 0
+        outputLabel.text = defaultOuputText
+        multipleCount = 0
+    }
 
 }
 
