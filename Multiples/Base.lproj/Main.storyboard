@@ -20,14 +20,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboard" translatesAutoresizingMaskIntoConstraints="NO" id="t4u-m4-90b">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="2je-nz-Ryb">
-                                <rect key="frame" x="66" y="28" width="468" height="109"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="2je-nz-Ryb" userLabel="logo">
+                                <rect key="frame" x="138" y="28" width="396" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="109" id="8sz-mJ-Qsw"/>
+                                    <constraint firstAttribute="width" constant="417" id="FU6-9h-iJY"/>
+                                    <constraint firstAttribute="width" constant="396" id="IpX-hS-7TC"/>
+                                    <constraint firstAttribute="height" constant="82" id="ZJU-WP-RM5"/>
+                                    <constraint firstAttribute="height" constant="97" id="awT-p0-Dg9"/>
                                     <constraint firstAttribute="width" constant="468" id="xA5-Mk-wJv"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8sz-mJ-Qsw"/>
+                                        <exclude reference="FU6-9h-iJY"/>
+                                        <exclude reference="awT-p0-Dg9"/>
+                                        <exclude reference="xA5-Mk-wJv"/>
+                                    </mask>
+                                </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number to add by." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-Dl-1ql">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number to add by." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-Dl-1ql" userLabel="numberEntryText">
                                 <rect key="frame" x="172" y="285" width="256" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="yse-Fh-h9H"/>
@@ -35,7 +47,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6y-Vt-W6y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6y-Vt-W6y" userLabel="playButton">
                                 <rect key="frame" x="193" y="369" width="215" height="211"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="211" id="fxH-LZ-PSH"/>
@@ -43,17 +55,36 @@
                                 </constraints>
                                 <state key="normal" image="play"/>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpN-yB-GeY" userLabel="OutputLabel">
+                                <rect key="frame" x="126" y="133" width="349" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtX-zc-8xY" userLabel="addButton">
+                                <rect key="frame" x="195" y="459" width="211" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="Nnw-IW-FvZ"/>
+                                    <constraint firstAttribute="height" constant="101" id="nq7-JZ-0YR"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GtX-zc-8xY" secondAttribute="bottom" constant="40" id="26L-G5-9Hu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A6y-Vt-W6y" secondAttribute="bottom" constant="20" id="6x3-BP-iwB"/>
                             <constraint firstItem="A6y-Vt-W6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7kY-qJ-8yA"/>
                             <constraint firstItem="Jc9-Dl-1ql" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bfw-oV-NNs"/>
+                            <constraint firstItem="2je-nz-Ryb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eu1-Pw-Ifd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="t4u-m4-90b" secondAttribute="bottom" id="GpB-Pf-QtE"/>
                             <constraint firstItem="t4u-m4-90b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HFE-d8-coY"/>
                             <constraint firstItem="Jc9-Dl-1ql" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KOD-Gj-X8G"/>
                             <constraint firstItem="t4u-m4-90b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LiX-md-F8O"/>
                             <constraint firstItem="2je-nz-Ryb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="McB-eh-KOC"/>
+                            <constraint firstItem="cpN-yB-GeY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="d1m-ML-GlW"/>
+                            <constraint firstItem="cpN-yB-GeY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rTt-Ex-gaC"/>
+                            <constraint firstItem="GtX-zc-8xY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uEn-c3-Okd"/>
                             <constraint firstAttribute="trailing" secondItem="t4u-m4-90b" secondAttribute="trailing" id="zz3-vJ-pcV"/>
                         </constraints>
                     </view>
@@ -65,6 +96,7 @@
     </scenes>
     <resources>
         <image name="MULTIPLES" width="533" height="124"/>
+        <image name="add" width="211" height="101"/>
         <image name="chalkboard" width="801" height="750"/>
         <image name="play" width="272" height="268"/>
     </resources>
