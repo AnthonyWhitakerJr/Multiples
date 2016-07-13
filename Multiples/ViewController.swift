@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var addend: Int = 0
     var previousMultiple: Int = 0
     let defaultOuputText = "Press Add to add!"
-    let maxMultipleCount = 10
+    let maxMultipleCount = 2
     var multipleCount = 0
     
     
@@ -52,13 +52,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onAddPressed(sender: UIButton) {
-        if(multipleCount > maxMultipleCount){
+        if(multipleCount >= maxMultipleCount){
             restart()
         }
-        
-        outputLabel.text = "\(previousMultiple) + \(addend) = \(previousMultiple + addend)"
-        previousMultiple += addend
-        multipleCount+=1
+        else {
+            outputLabel.text = "\(previousMultiple) + \(addend) = \(previousMultiple + addend)"
+            previousMultiple += addend
+            multipleCount+=1
+        }
     }
     
     func restart(){
@@ -67,6 +68,7 @@ class ViewController: UIViewController {
         previousMultiple = 0
         outputLabel.text = defaultOuputText
         multipleCount = 0
+        numberEntryText.text = ""
     }
 
 }
